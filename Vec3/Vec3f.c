@@ -43,11 +43,12 @@ struct Vec3f div_safe( struct Vec3f lhs, float rhs )
 {
     if ( rhs )
     {
-        return lhs;
+        return mul( lhs, 1/rhs );
     }
     else
     {
-        return mul( lhs, 1/rhs );
+        Vec3fSet( &lhs, 0, 0, 0 );
+        return lhs;
     }
 }
 
