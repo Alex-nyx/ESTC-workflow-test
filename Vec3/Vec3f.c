@@ -41,7 +41,7 @@ struct Vec3f div( struct Vec3f lhs, float rhs )
 
 struct Vec3f div_safe( struct Vec3f lhs, float rhs )
 {
-    if ( rhs )
+    if ( rhs != 0 )
     {
         return mul( lhs, 1/rhs );
     }
